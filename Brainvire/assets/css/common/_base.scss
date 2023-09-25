@@ -1,0 +1,134 @@
+
+* {
+    box-sizing: border-box;
+}
+/* reset css starts */
+html,
+body,
+header,
+main,
+footer,
+section,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+ul,
+li img,
+figure,
+label,
+input,
+marquee,
+picture,
+video,
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+img {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  font-family: var(--primary-font);
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+  vertical-align: middle;
+  text-decoration: none;
+  color: var(--black-color);
+  display: inline-block;
+}
+span,
+picture{
+  display: inline-block;
+}
+/* reset css ends */
+
+body{
+  @include body-font;
+}
+
+.container{
+  @include container-box(1240px);
+}
+
+h1, .h1{
+  @include h1;
+}
+h2, .h2{
+  @include h2;
+}
+h3, .h3{
+  @include h3;
+}
+h4, .h4{
+  @include h4;
+}
+h5, .h5{
+  @include h5;
+}
+h6, .h6{
+  @include h6;
+}
+p, .p{
+  @include font-size(1rem, 1.313rem);
+}
+  
+.d-flex {
+  @include flexbox;
+}
+.text-align-center{
+  @include text-align-center;
+}
+.d-grid {
+  @include grid;
+}
+.flex-d-col{
+  @include flexbox;
+  @include flex-col;
+}
+.align-items-center{
+  @include align-item-center;
+}
+.justify-space-between{
+  @include space-between;
+}
+.justify-center{
+  @include justify-center;
+}
+.justify-space-around{
+  justify-content: space-around;
+}
+
+.justify-space-evenly{
+  justify-content: space-evenly;
+}
+.text-center{
+  @include flexCenter;
+}
+
+.row{
+  @include row;
+}
+  
+.asterisk{
+    color:var(--red-color);
+}
+
+.shadow{
+  @include box-shadow(0.063rem, 0.25rem, 1.25rem, rgba(0,0,0,0.05));
+}
+
+

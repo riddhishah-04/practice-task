@@ -1,0 +1,58 @@
+header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #fff;
+    min-height: 3.938rem;
+    
+    @include mq($tablet) {
+        min-height: 5.625rem;
+    }
+
+    .header-left {
+        > a{
+            padding-top: 1.063rem;
+            padding-bottom: 1.063rem;
+
+            @include mq($tablet) {
+                padding-top: 1.813rem;
+                padding-bottom: 1.813rem;
+            }
+
+            > img{
+                width:8.438rem;
+                height:1.875rem;
+                
+                @include mq($tablet) {
+                    width:8.75rem;
+                    height:2rem;
+                }
+            } 
+        }
+    }
+    .header-right {
+        > .back-link{
+            padding-top: 1.063rem;
+            padding-bottom: 1.063rem;
+            margin-left:0.625rem;
+            @include flexCenter;
+            
+            @include mq($tablet) {
+                padding-top: 1.813rem;
+                padding-bottom: 1.813rem;
+            }
+
+
+            > span{
+                font-size: 1rem;
+                font-weight: 600;
+                line-height: 1.313rem;
+                color: var(--link-color);
+            }
+
+            > svg{
+                margin-right:0.75rem;
+            }
+        }
+    }
+}

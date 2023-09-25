@@ -1,0 +1,367 @@
+@import '../common/variables';
+@import '../common/fonts';
+@import '../common/mixin';
+@import '../common/base';
+
+@import '../layout/header';
+@import '../component/button';
+@import '../component/form';
+@import '../layout/footer';
+
+.banner-section{
+    padding-bottom:1.5rem ;
+    position: relative;
+
+    .banner-section-wrapper{
+        max-width: 87.125rem;
+        position:relative;
+        margin:0 auto;
+
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            background: linear-gradient(81deg, #011956 0%, #1966e9 109.32%);
+            opacity: 1;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            z-index: 0;
+            height: calc(100% - 260px);
+            
+            @include mq($tablet) {
+                border-radius: 0 0 3.125rem 3.125rem;
+                height:100%;
+            }
+
+            @include mq($desktop) {
+                border-radius: 3.125rem;      
+            }
+        }
+        
+        .banner-image{
+            position: absolute;
+            width:100%;
+            @include mq($ipad) {
+                height: 100%;
+            }
+            
+            .portrait-image{
+                object-position: top;
+                object-fit: cover;
+                border-radius: 0;
+            }
+            
+            .landscape-image{
+                width: 100%;
+                height:100%;
+                object-position: top center;
+                border-radius: 0;
+                object-fit: cover;
+                opacity: 0.16;
+                min-height: 410px;
+
+                @include mq($ipad) {
+                    border-radius: 3.125rem;
+                }
+            }
+
+
+        }
+
+        .banner-section-content{
+
+            .container{
+               position: relative;
+               z-index: 2;
+               flex-direction: column;
+               
+               
+               @include mq($ipad) {
+                   align-items: center;
+                   flex-direction: row;
+               }
+   
+           }
+        }
+
+        .banner-caption{
+            padding-top: 3.15rem;
+            padding-bottom: 2rem;
+           .banner-caption-text{
+               color:var(--white-color);
+               max-width: 100%;
+  
+               @include mq($tablet) {
+                   max-width: 40rem;
+               }
+
+               @include mq($ipad) {
+                   max-width: 29.5rem;
+               }
+           }
+           .awards-image{
+               display: none;
+
+               @include mq($ipad) {
+                   display: block;
+                   max-width: 26.75rem;
+                   padding-top: 3.625rem;
+
+                }
+
+               @include mq($desktop) {
+                    max-width: 32.125rem;
+                }
+
+               > img{
+                   width:100%;
+                   object-fit: contain;
+               }
+           }
+        }  
+    } 
+
+    .banner-caption-text{
+       h1{
+           margin-bottom: 0.125rem;
+
+           > span{
+            font-weight: 400;
+            margin-right:0.313rem;
+            }
+        }
+        
+        p{
+            margin-bottom: 2.5rem;
+            font-size: 0.875rem;
+            line-height: 1.313rem;
+            opacity:0.8;
+            display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical; 
+          overflow: hidden;
+        } 
+    }
+
+    .banner-form{
+        width:100%;
+        padding-top:1.4rem;
+        
+        @include mq($tablet) {
+            margin-bottom: -8rem;
+        }
+        
+        @include mq($ipad) {
+            padding-top:5.625rem; 
+            margin-left:0.625rem;
+            max-width: 30.125rem;
+        }
+        
+        @include mq(1024px) {
+            max-width: 31rem;
+        }
+        
+        @include mq($desktop) {
+            max-width: 34.375rem;
+        }
+        
+        @include mq($desktop-lg) {
+            max-width: 36.375rem;
+        }
+        
+        .banner-form-wrapper{
+            @include box-shadow(0.063rem, 0.25rem, 1.875rem, rgba(0,0,0,0.08));
+            background-color: var(--white-color);
+            border-radius:0.625rem;
+        }
+
+        .form-heading{
+            padding:1.344rem 1.75rem;
+            background-color: rgba(3, 167, 248, 0.1);
+            color:var(--primary-color);
+            
+            > span{
+                    font-weight: 400;
+                    margin-right: 0.313rem;
+            }
+        }
+    }
+}
+
+.security-section{
+    padding-top: 3rem;
+    padding-bottom: 3.85rem;
+    
+    @include mq($tablet) {
+        position: relative;
+        z-index: 0;
+        padding-bottom: 3rem;
+        padding-top: 1.85rem;
+    }
+
+    .container{
+        column-gap: 1.875rem;
+        text-align: center;
+        row-gap: 2rem;
+        flex-direction: column;
+        align-items: center;
+        
+        @include mq($ipad) {
+            flex-direction: row;
+            row-gap: 0.625rem;
+        }
+
+        .security-logo{
+            display: flex;
+            max-width: 3.063rem;
+            max-height: 3.438rem;
+            align-items: center;
+            
+            img{
+                object-fit: contain;
+                height:100%;
+                width:100%;
+            }
+        }
+
+        .security-text{
+            max-width: 100%;
+    
+            @include mq($ipad) {
+                text-align: left;
+            }
+
+            h5{
+                margin-bottom: 1rem;
+                font-weight: 400;
+            }
+        }
+    }     
+}
+
+.brands-section{
+    padding-top: 2.5rem;
+    padding-bottom: 3rem;
+
+    @include mq($tablet) {
+        padding-top:3.7rem;
+        padding-bottom: 3.15rem;
+    }
+
+    .container{
+        position: relative;
+
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            height:0.125rem;
+            width:93.58%;
+            background-color: #d9d9d9;
+            opacity:0.5;
+            top:-3.25rem;
+
+            @include mq($ipad) {
+                display: none;
+            }
+        }
+    }
+
+    h2{
+        color:var(--heading-text-color);
+        padding-bottom: 1.625rem;
+        
+        @include mq($tablet) {
+            padding-bottom: 2.625rem;
+        }
+
+        > span{
+            font-size: 1.625rem;
+            line-height: 1.313rem;
+            font-weight: 400;
+            color:var(--black-color);
+
+            @include mq($ipad) {
+                font-size: 2rem;
+                line-height: 2.5rem;
+            }
+        }
+    }
+
+    .brand-logos {
+        overflow-x: hidden; 
+        user-select: none;
+
+        .brand-logo-boxes{
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 1.25rem;
+            min-width: 100%;
+            padding: 1.25rem 0 1rem;
+        }
+
+        .brand-box{
+            width: 11.875rem;
+            height: 5.563rem;   
+            padding:1rem 0.875rem;
+            @include box-shadow(0.063rem, 0.25rem, 1.25rem, rgba(0, 0, 0, 0.1));
+            @include mq($tablet) {
+                height:6.063rem;
+                width:13.063rem;
+            }
+    
+            > picture{
+                height:3.75rem ;
+                max-width:10.313rem;
+    
+                @include mq($tablet) {
+                    height:4.063rem;
+                    max-width:11.25rem;
+                }
+    
+                > img{
+                    width:100%;
+                    height:100%;
+    
+                }
+            }
+        }
+    }
+
+        @keyframes slide-rtl {
+            from {
+              transform:translateX(0);
+            }
+            to {
+              transform:translateX(-100%);
+            }
+        } 
+        
+        @keyframes slide-ltr {
+          from {
+            transform:translateX(-100%);
+          }
+          to {
+            transform:translateX(0);
+          }
+        } 
+
+        .dir-right {
+            .brand-logo-boxes {
+                animation: 30s slide-rtl infinite linear;
+              }
+        }
+          
+          .dir-left {
+              .brand-logo-boxes {
+                animation: 30s slide-ltr infinite linear;
+              }
+          }
+}

@@ -1,0 +1,26 @@
+:root{
+    --primary-color: #002073;
+    --secondary-color: #03A7F8;
+    --white-color: #ffffff;
+    --black-color:  #000000;
+    --link-color: #1B76FE;
+    --shaft-color: #202020;
+    --file-text-color: #0087C9;
+    --heading-text-color:#0058A5;
+    --red-color:#FF0000;
+    --placeholder-text-color:#02113A;
+    --light-grey-color: #D9D9D9;
+    --box-border-color: #F4F4F4;
+    
+    --primary-font: 'Poppins';
+
+    --duration: 60s;
+}
+
+// breakpoint variables
+$mobile: 576px;
+$tablet: 768px;
+$ipad: 991px;
+$desktop: 1280px; 
+$desktop-lg:1400px;
+$desktop-xlg:1600px;

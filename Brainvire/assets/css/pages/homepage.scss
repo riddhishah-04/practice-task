@@ -1,0 +1,759 @@
+@import '../common/variables';
+@import '../common/fonts';
+@import '../common/mixin';
+@import '../common/base';
+
+@import '../component/button';
+
+h2{
+    font-weight: 500;
+
+    @include mq($ipad) {
+        font-weight: 600;
+    }
+}
+
+.happy-clients-section{
+    padding-top: 4.25rem;
+    padding-bottom: 4.563rem;
+    position:relative;
+    
+    @include mq($ipad) {
+        padding-top: 6.25rem;
+        padding-bottom: 5.625rem;
+    }
+    .container{
+        position:relative;
+
+        &::after{
+            content:'';
+            display: block;
+            position: absolute;
+            height:0.125rem;
+            background: linear-gradient(90deg, rgba(217, 217, 217, 0.00) 0%, #D9D9D9 51.04%, rgba(217, 217, 217, 0.00) 100%);
+            left:0;
+            right:0;
+            bottom:-4.55rem;
+            
+            @include mq($ipad) {
+                bottom:-5.688rem;
+
+            }
+        }
+    }
+
+
+    .h4{
+        position: relative;
+        @include text-align-center;
+        margin-bottom: 2.125rem;
+        font-weight: 500;
+        opacity:0.5;
+        color:var(--black);
+        
+        @include mq($ipad) {
+            margin-bottom: 3.25rem;
+            opacity:1;
+        }
+
+        span{
+            background-color: var(--white-color);
+            padding:0 0.938rem;
+            
+            @include mq(tablet) {
+                padding:0 2.188rem;
+            }
+        }
+
+
+        &::before{
+            content:'';
+            display: block;
+            position: absolute;
+            height:0.125rem;
+            top:0.625rem;
+            background: linear-gradient(90deg, rgba(217, 217, 217, 0) 0%, #D9D9D9 51.04%, rgba(217, 217, 217, 0) 100%);
+            left: 0;
+            right: 0;
+            z-index: -1;
+        }
+    }
+
+    .clients-list{
+        grid-template-columns: repeat(3, 1fr);
+        -moz-column-gap: 1.625rem;
+        -webkit-column-gap: 1.625rem;
+        column-gap: 1.625rem;
+        row-gap: 0.938rem;
+        
+        @include mq($tablet) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        @include mq($ipad) {
+            grid-template-columns: repeat(6, 1fr);
+            -webkit-column-gap: 2.688rem;
+            -moz-column-gap: 2.688rem;
+                 column-gap: 2.688rem;
+            row-gap: 2rem;
+        }
+    }
+
+    .client-item {
+        .client-link{
+            width:100%;
+            @include flexCenter;
+            @include border(0.063rem, var(--box-border-color));
+            padding:0.25rem;
+            min-height: 3.125rem;
+            
+            @include mq($mobile) {
+                min-height: 4.25rem;
+                padding:0.625rem;
+            }
+    
+            @include mq($ipad) {
+                min-height: 5.25rem;
+                padding:0.5rem;
+            }
+        }
+
+        .client-logo{
+            max-width:5rem;
+
+            @include mq($mobile) {
+                max-width:9.375rem;
+            }
+
+            > img{
+                height: 2.063rem;
+                object-fit: contain;
+                width:100%;
+                
+                @include mq($mobile) {
+                    height: 3.25rem;
+                }
+            }
+        }
+    }
+}
+
+.upcoming-event-section{
+    background-color: var(--white-color);
+    padding-top: 5.188rem;
+    padding-bottom: 4.625rem;
+    
+    @include mq($ipad) {
+        padding-top:6.813rem;
+        padding-bottom:6.375rem;
+    }
+
+    h2{
+        margin-bottom: 2.875rem;
+        
+        @include mq($ipad) {
+            margin-bottom: 3.5rem;
+        }
+    }
+
+    .events-list{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
+            -webkit-column-gap: 1.625rem;
+               -moz-column-gap: 1.625rem;
+               column-gap: 1.625rem;
+        row-gap: 2.063rem;
+
+        @include mq($tablet) {
+            -ms-grid-columns: 1fr 1.625rem 1fr;
+            grid-template-columns: repeat(2, 1fr);
+
+        }
+        
+        @include mq($ipad) {
+            -ms-grid-columns: 1fr 1.625rem 1fr 1.625rem 1fr;
+            grid-template-columns: repeat(3, 1fr);
+
+        }
+
+        .event-card{ 
+            &:not(:last-child){
+                padding-bottom:2.25rem;
+                border-bottom: 0.063rem solid var(--light-grey-color);  
+
+                @include mq($tablet) {
+                    padding-bottom:0;
+                    border-bottom: none;                   
+                }
+            }
+            
+            .event-image{
+                margin-bottom: 1.38rem;
+                width:100%;
+                height:auto;
+                
+                @include mq($desktop) {
+                    max-height: 13.375rem;
+                    height:100%;
+                }
+
+                img{
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+
+                    @include mq($desktop) {
+                        height: 13.375rem;
+                    }
+                }
+            }
+            
+            h3{
+                font-weight: 500;
+                margin-bottom: 0.75rem;
+                
+                @include mq($ipad) {
+                    margin-bottom: 1.125rem;
+                }
+            }
+        
+            .h5{
+                margin-bottom: 1.313rem;
+                
+                @include mq($ipad) {
+                    margin-bottom: 0.938rem;
+                }
+
+                sup{
+                    font-size: 0.625rem;
+                }
+            }
+        
+            p{
+                font-size: 0.875rem;
+                line-height: 1.313rem;
+                margin-bottom: 1rem;
+                padding-right: 2.188rem;
+                @include text-clamp(2);
+                
+                @include mq($ipad) {
+                    opacity: 0.8;
+                    margin-bottom: 1.688rem;
+                }
+            }
+        
+            .meet-link{
+                display: -webkit-inline-box;
+                display: -ms-inline-flexbox;
+                display: inline-flex;
+                font-weight: 500;
+                line-height: 1.563rem;
+                color: var(--link-color);
+                -webkit-column-gap: 0.75rem;
+                -moz-column-gap: 0.75rem;
+                     column-gap: 0.75rem;
+                @include transition(0.2s, ease-in-out);
+                
+                @include mq($tablet) {
+                    font-weight: 600;
+                }
+
+                &:hover{
+                    span{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.our-company-section{
+    padding-top:4.375rem;
+    padding-bottom: 4.375rem;
+    
+    @include mq($ipad) {
+        padding-top:7.25rem;
+        padding-bottom: 8.125rem;
+    }
+
+    .company-section-wrapper{
+        grid-template-columns:minmax(100%, min-content);
+        grid-template-areas:"title"
+                            "video"
+                            "record";
+
+        @include mq($ipad) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas:"title video"
+                                "record video"
+                                "record video"
+                                "record video";
+            @include column-gap(0.625rem);
+        }
+
+        .title-section{
+            grid-area: title;
+            margin-bottom: 1.75rem;
+            
+            @include mq($ipad) {
+                margin-bottom: 3.125rem;
+                display: block;
+            }
+    
+            @include mq($desktop) {
+                padding-right:7.188rem;
+            }
+
+            h2{
+                margin-bottom: 1rem;
+                
+                @include mq($ipad) {
+                    margin-bottom: 1.125rem;
+                }
+            }
+            
+            p{
+                font-size: 0.875rem;
+                line-height: 1.25rem;
+                opacity:0.8;
+                transition: height .3s ease;
+            }
+            
+            #moreText {
+                display: none;
+            }
+            
+            #readMoreLink {
+                display: inline;
+                color: var(--link-color);
+                cursor: pointer;
+                text-decoration: underline;
+                font-size: 0.875rem;
+            }
+        }
+        .video-section{
+            grid-area: video;
+            position:relative;
+            margin:0 auto;
+            margin-bottom: 5.5rem;
+            padding:0 0.625rem;
+            width:100%;
+            @include flexCenter;
+            
+            
+            @include mq($ipad) {
+                padding:0 1.25rem;
+                margin-bottom: 0;
+            }
+
+            .video-wrapper{
+                max-width: 33.25rem;
+                width: 100%;
+                position: relative;
+
+                &::before, &::after{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                }
+    
+                &::before{
+                    background-image: url(../../images/play-btn.svg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    right:0;
+                    bottom:-0.725rem;
+                    width: 2.75rem;
+                    height: 2.75rem;  
+                    z-index: 2;
+                    cursor: pointer;
+                    
+                    @include mq($tablet) {
+                        right: -0.625rem;
+                        bottom: -0.625rem;
+                        width: 3.875rem;
+                        height: 3.875rem; 
+                    }
+                    @include mq($desktop) {
+                        right:0;
+                        bottom:-1.25rem;
+                        width: 5rem;
+                        height: 5rem;  
+                    }
+                }
+                
+                &::after{
+                    background-color: rgba(27, 118, 254, 0.1);
+                    border-radius: 1rem;
+                    right: -1.25rem;
+                    bottom: -1.875rem;
+                    max-width: 12.75rem;
+                    width: 100%;
+                    height: 5.125rem;
+                    z-index: -1;
+                    
+                    @include mq($mobile) {
+                        height: 9.125rem;  
+                        max-width: 23.125rem;
+                    };
+                    
+                    @include mq($desktop) {
+                        bottom: -2.5rem;
+                        right: -2.5rem;
+                    }
+                }
+
+                .video-preview{
+                    overflow: hidden;
+                    border-radius: 3.75rem 0.625rem;
+                    border: 0.313rem solid #fff;
+                    box-shadow: 0 0.25rem 2.5rem 0 rgba(0, 0, 0, 0.10);
+                    background-color: var(--white-color);
+                    padding-bottom: 67.67%;
+                    position: relative;
+                    min-height: 13.75rem;
+
+                    .video-area{
+                        left: 0;
+                        pointer-events: none;
+                        position: absolute;
+                        width:148%;
+                        top:50%;
+                        transform: translate(-10%,-50%);
+
+                        @include mq($ipad) {
+                            width:126%;
+                        }
+
+
+                        video{
+                            height:100% !important;
+                            width:100% !important;
+                        }
+                    }
+                }
+            }
+            
+                 
+        }
+    }
+    .records-section{
+        grid-area: record;
+
+        @include mq($desktop) {
+            padding-right:7.188rem;
+        }
+
+        .record-list{
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3.125rem 0.625rem;
+            padding-bottom: 3.625rem;
+            
+            @include mq($ipad) {
+                padding-bottom: 3.875rem;
+            }
+
+            .record-item{
+                border-left: 0.125rem solid black;
+                padding-left: 1.125rem;
+                
+                @include mq($ipad) {
+                    padding-left: 1.75rem;
+                }
+
+                h3{
+                    font-size: 1.875rem;
+                    line-height: normal;
+                    color: var(--link-color);
+                    
+                    @include mq($ipad) {
+                        font-size: 2.25rem;
+                    }
+                }
+
+                p{
+                    opacity: 0.7;
+                    font-size: 0.875rem;
+
+                    @include mq($ipad) {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        .menu-list{
+            width: 100%;
+            overflow: auto;
+
+            .menu-item{
+                &:not(:last-child){
+                    margin-right: 1.063rem;
+                    
+                    @include mq($ipad) {
+                        margin-right: 1.438rem;
+                    }
+                }
+
+                > a{
+                    padding:0.91rem;
+                    color: rgba(0, 0, 0, 0.4);
+                    border-bottom: 0.063rem solid rgba(0, 0, 0, 0.4);
+                    font-weight: 700;
+                    font-size: 1rem;
+                    line-height: normal;
+                    position: relative;
+                    transition: 0.4s ease;
+                    min-width: 8rem;
+                    @include flexCenter;
+                    z-index: 1;
+                    
+                    @include mq($ipad) {
+                        padding:0.75rem;
+                        min-width: 9.875rem;
+                    }
+
+                    &::before{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        background-color: black;
+                        height:0;
+                        width:100%;
+                        bottom:0;
+                        right:0;
+                        transition: all 0.3s ease;
+                        z-index: -1;
+                    }
+
+                    &:hover{
+                        color: var(--white-color);
+                        &::before{
+                            height:100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.insights-blog-section{
+    padding-top:3.75rem;
+    padding-bottom: 3.75rem;
+    
+    @include mq($ipad) {
+        padding-top:6.875rem;
+        padding-bottom: 6.875rem;
+    }
+
+    h2{
+        margin-bottom: 42px;
+        
+        @include mq($ipad) {
+            margin-bottom: 3.75rem;
+        }
+    }
+    
+    .blog-list{
+        grid-template-columns:1fr;
+        @include column-gap(25px);
+        row-gap: 28px;
+        
+        @include mq($tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mq($ipad) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .blog-card{
+            border: 1px solid var(--light-grey-color);
+            border-radius: 0.625rem;
+            
+            @include mq($ipad) {
+                border-top-left-radius:0;
+                border-top-right-radius:0;
+            }
+
+            .insights-card-image{
+                height: auto;
+                width: 100%;
+
+                img {
+                height: auto;
+                width: 100%;
+                border-radius: 0.625rem;
+                object-fit: contain;
+
+                @include mq($ipad) {
+                    border-radius: 0;
+                }
+                }
+            }
+
+            .blog-text{
+                padding: 26px 1.25rem 24px;
+                
+                @include mq($desktop) {
+                    padding:34px 24px 26px;
+                }
+    
+                .h4{
+                    margin-bottom: 16px;
+                    font-weight: 500;
+                    
+                    @include mq($ipad) {
+                        margin-bottom: 1.25rem;
+                    }
+                }
+    
+                p{
+                    margin-bottom: 30px;
+                    
+                    @include mq($ipad) {
+                        margin-bottom: 38px;
+                    }
+                }
+
+                .read-more-link{
+                    display: inline-flex;
+                    font-weight: 500;
+                    color: var(--link-color);
+                    column-gap: 12px;
+                    font-size: 18px;
+                    @include transition (.2s, ease);
+                    
+                    @include mq($ipad) {
+                        @include font-xxs;
+                    }
+
+                    svg{
+                        stroke: var(--link-color);
+                    }
+
+                    &:hover{
+                        span{
+                            &:not(:last-child){
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.about-project-section{
+    background: linear-gradient(254deg, rgb(111, 168, 255,0.66) 0%, rgba(225, 237, 255, 0.66) 99.16%);
+    background-repeat: no-repeat;
+    padding-top: 44px;
+    padding-bottom:64px;
+
+    @include mq($ipad) {
+        padding-top:6.875rem;
+        padding-bottom: 6.875rem;
+    }
+
+    .container{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "contact form"
+                             "partner form";
+    }
+
+    h2{
+        font-size: 36px;
+        line-height: normal;
+        font-weight: 500;
+        margin-bottom: 42px;
+    }
+
+    .project-content{
+        grid-area: contact;
+        .contact-list{
+            @include column-gap(22px);
+            padding-bottom: 82px;
+    
+            .contact-item{
+                position:relative;
+                background-color: rgba(255, 255, 255, 0.80);
+                @include border(1px, rgba(226, 236, 244, 0.50));
+                padding:23px 18px;
+                @include rounded(0.625rem);
+    
+                .phone-icon{
+                    position:absolute;
+                    top:0.625rem;
+                    right:0.625rem;
+                }
+            }
+    
+            span{
+                font-size: 12px;
+                line-height: normal;
+                opacity: 0.5;
+                margin-bottom: 4px;
+                line-height: normal;
+            }
+    
+            a{
+                font-size: 14px;
+                font-weight: 600;
+                color: var(--link-color);
+                line-height: normal;
+                margin-bottom: 5px;
+    
+                @include mq($ipad) {
+                    @include font-sm;
+                }
+            }
+    
+            h3{
+                font-size: 12px;
+                font-weight: normal;
+                font-weight: 500;
+    
+                @include mq($ipad) {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+
+    .project-form{
+        grid-area: form;
+        h4{
+            background-color: rgb(11, 34, 84, 0.5);
+            color: var(--white-color);
+            font-weight: 600;
+
+            @include mq($ipad) {
+                margin-bottom: 30px;
+                padding:22px;
+            }
+        }
+    }
+
+    .project-partner{
+        grid-area: partner;
+        h5{
+            font-weight: 500;
+            position: relative;
+
+            &::before{
+                content: '';
+                display: block;
+                position: absolute;
+                height:1px;
+                background: #B1C8EB;
+                right:0;
+                left: 10.6%;
+                top: 50%;
+            }
+        }
+    }
+}
